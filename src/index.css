@@ -37,14 +37,13 @@ footer, header, hgroup, menu, nav, section {
 
 /* Color scheme variables */
 :root {
-  --kobe: #7B3114;
-  --grullo: #A79485;
-  --burlywood: #CE913B;
+  --burlywood: #FBF6EF;
   --bistre: #473328;
-
-  --text: #F0F5F9;
-
-  --beauBlue: rgba(240, 245, 249, 0.6);
+  --yellow: #CAAF02;
+  --gunMetal: #172B3A;
+  --gunMetalOP: rgba(23, 43, 58, 0.5);
+  --steelBlue: #4681AF;
+  --beauBlue: rgba(240, 245, 249, 0.8);
   --infoBg: rgba(71, 51, 40, 0.7);
 }
 /* General styling */
@@ -65,7 +64,8 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
+border-radius: 5px;
 margin: 5% 0;
-background-color: var(--beauBlue);
+background-color: var(--gunMetalOP);
 padding: 3%;
 }
