@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import './App.css';
+import Character from './components/Character';
 
 const App = () => {
+  const [character, setCharacter] = useState([]);
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -9,11 +12,27 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+  useEffect(() => {
+    axios.get('https://swapi.dev/api/people')
+      .then(res => {
+        console.log(res.data)
+        setCharacter(res.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, []);
+
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+        
+{ character.map(item => {
+  return <Character item={item} character={character}/>
+})}
     </div>
   );
 }
+
 
 export default App;
